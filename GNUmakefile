@@ -27,8 +27,9 @@ install:
 	cp $(APP) $(APP_DIR)
 	cp urn-gtk.gschema.xml $(SCHEMAS_DIR)
 	glib-compile-schemas $(SCHEMAS_DIR)
-	mkdir -p /usr/share/urn/themes
-	rsync -a --exclude=".*" themes /usr/share/urn
+	mkdir -p /usr/share/urn/themes/standard
+	rsync -a --exclude=".*" themes /usr/share/urn || true
+	cp standard.css /usr/share/urn/themes/standard
 
 uninstall:
 	rm -f $(BIN_DIR)/$(BIN)
