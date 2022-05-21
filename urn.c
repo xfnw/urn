@@ -673,6 +673,7 @@ int urn_timer_reset(urn_timer *timer) {
 
 int urn_timer_cancel(urn_timer *timer) {
     if (!timer->running) {
+	/*
         if (timer->started) {
             if (*timer->attempt_count <= 0) {
                 *timer->attempt_count = 0;
@@ -680,6 +681,7 @@ int urn_timer_cancel(urn_timer *timer) {
                 --*timer->attempt_count;
             }
         }
+	*/
         reset_timer(timer);
         return 1;
     }
