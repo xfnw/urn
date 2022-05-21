@@ -506,7 +506,7 @@ static void urn_app_window_init(UrnAppWindow *win) {
     gtk_widget_show(win->footer);
 
     g_timeout_add(1, urn_app_window_step, win);
-    g_timeout_add((int)(1000 / 20.), urn_app_window_draw, win); 
+    g_timeout_add((int)(1000 / 15.), urn_app_window_draw, win); 
 }
 
 static void urn_app_window_class_init(UrnAppWindowClass *class) {
