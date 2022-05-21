@@ -25,11 +25,6 @@ urn-gtk.h: urn-gtk.css
 install:
 	cp $(BIN) $(BIN_DIR)
 	cp $(APP) $(APP_DIR)
-	for size in 16 22 24 32 36 48 64 72 96 128 256 512; do \
-	  convert $(ICON).svg -resize "$$size"x"$$size" \
-	          $(ICON_DIR)/"$$size"x"$$size"/apps/$(ICON).png ; \
-	done
-	gtk-update-icon-cache -f -t $(ICON_DIR)
 	cp urn-gtk.gschema.xml $(SCHEMAS_DIR)
 	glib-compile-schemas $(SCHEMAS_DIR)
 	mkdir -p /usr/share/urn/themes
