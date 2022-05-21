@@ -65,8 +65,8 @@ static void urn_time_string_format(char *string,
     seconds = (time / 1000000LL) % 60;
     sprintf(dot_subsecs, ".%06lld", time % 1000000LL);
     if (!serialized) {
-        /* Show only a dot and 1 decimal place instead of all 6 */
-        dot_subsecs[2] = '\0';
+        /* Show only a dot and 2 decimal places instead of all 6 */
+        dot_subsecs[3] = '\0';
     }
     if (millis) {
         strcpy(millis, &dot_subsecs[1]);
