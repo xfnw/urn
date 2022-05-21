@@ -249,10 +249,11 @@ static void timer_stop_reset(UrnAppWindow *win) {
         if (win->timer->running) {
             urn_timer_stop(win->timer);
         } else {
+		urn_game_update_splits(win->game, win->timer);
             if (urn_timer_reset(win->timer)) {
+		save_game(win->game);
                 urn_app_window_clear_game(win);
                 urn_app_window_show_game(win);
-                save_game(win->game);
             }
         }
         for (l = win->components; l != NULL; l = l->next) {
@@ -505,7 +506,7 @@ static void urn_app_window_init(UrnAppWindow *win) {
     gtk_widget_show(win->footer);
 
     g_timeout_add(1, urn_app_window_step, win);
-    g_timeout_add((int)(1000 / 30.), urn_app_window_draw, win); 
+    g_timeout_add((int)(1000 / 20.), urn_app_window_draw, win); 
 }
 
 static void urn_app_window_class_init(UrnAppWindowClass *class) {

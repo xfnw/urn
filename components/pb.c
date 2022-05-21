@@ -7,7 +7,7 @@ typedef struct _UrnPb {
 } UrnPb;
 extern UrnComponentOps urn_pb_operations;
 
-#define PERSONAL_BEST "Personal best"
+#define PERSONAL_BEST "Previous run"
 
 UrnComponent *urn_component_pb_new() {
     UrnPb *self;
