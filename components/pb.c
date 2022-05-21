@@ -7,7 +7,7 @@ typedef struct _UrnPb {
 } UrnPb;
 extern UrnComponentOps urn_pb_operations;
 
-#define PERSONAL_BEST "Previous run"
+#define PERSONAL_BEST "Personal best"
 
 UrnComponent *urn_component_pb_new() {
     UrnPb *self;
@@ -52,7 +52,7 @@ static void pb_show_game(UrnComponent *self_,
     if (game->split_count && game->split_times[game->split_count - 1]) {
         if (game->split_times[game->split_count - 1]) {
             urn_time_string(
-                str, game->split_times[game->split_count - 1]);
+                str, game->best_splits[game->split_count - 1]);
             gtk_label_set_text(GTK_LABEL(self->personal_best), str);
         }
     }
@@ -77,12 +77,12 @@ static void pb_draw(UrnComponent *self_, urn_game *game,
                 < game->split_times[game->split_count - 1]))) {
         add_class(self->personal_best, "time");
         urn_time_string(
-            str, timer->split_times[game->split_count - 1]);
+            str, timer->best_splits[game->split_count - 1]);
         gtk_label_set_text(GTK_LABEL(self->personal_best), str);
     } else if (game->split_times[game->split_count - 1]) {
         add_class(self->personal_best, "time");
         urn_time_string(
-            str, game->split_times[game->split_count - 1]);
+            str, game->best_splits[game->split_count - 1]);
         gtk_label_set_text(GTK_LABEL(self->personal_best), str);
     }
 }
