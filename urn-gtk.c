@@ -706,7 +706,7 @@ static void urn_app_startup(GApplication *app) {
         "<interface>"
         "  <menu id='menubar'>"
         "    <submenu>"
-        "      <attribute name='label'>File</attribute>"
+        "      <attribute name='label'>urine</attribute>"
         "      <item>"
         "        <attribute name='label'>Open</attribute>"
         "        <attribute name='action'>app.open</attribute>"
