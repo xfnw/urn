@@ -23,7 +23,7 @@
 .split, .split-last {
 	color: #99a;
 	font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
-    background: transparent;
+    background: #000;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .split, .split .split-time {
@@ -40,7 +40,6 @@
 }
 .current-split .split-time {
 	color: #fff;
-    background: transparent;
 }
 .split, .current-split, .split-title, .split-time, .split-delta, .split-last {
 	padding-top: 2px;
