@@ -219,9 +219,6 @@ static void splits_draw(UrnComponent *self_, urn_game *game, urn_timer *timer) {
             if (timer->split_info[i] & URN_INFO_BEST_SPLIT) {
                 add_class(self->split_deltas[i], "best-split");
             }
-            if (timer->split_info[i] & URN_INFO_BEST_SEGMENT) {
-                add_class(self->split_deltas[i], "best-segment");
-            }
             if (timer->split_info[i] & URN_INFO_BEHIND_TIME) {
                 add_class(self->split_deltas[i], "behind");
                 if (timer->split_info[i]
@@ -234,6 +231,11 @@ static void splits_draw(UrnComponent *self_, urn_game *game, urn_timer *timer) {
                     & URN_INFO_LOSING_TIME) {
                     add_class(self->split_deltas[i], "losing");
                 }
+            }
+            if (timer->split_info[i] & URN_INFO_BEST_SEGMENT) {
+                add_class(self->split_deltas[i], "best-segment");
+                remove_class(self->split_deltas[i], "behind");
+                remove_class(self->split_deltas[i], "losing");
             }
             if (timer->split_deltas[i]) {
                 add_class(self->split_deltas[i], "delta");
