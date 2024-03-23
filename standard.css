@@ -58,7 +58,7 @@
     font-family: "Roboto Black";
     background: transparent;
 }
-.best-split, .footer .previous-segment .best-split {
+.best-segment, .footer .previous-segment .best-split {
     animation: blink-split 4s;
     animation-iteration-count: infinite;
     background-color: transparent;
